@@ -238,6 +238,7 @@ def svm_cross_validation(X, y,
         "recall_std": np.std(recalls),
         "auc_mean": np.mean(aucs),
         "auc_std": np.std(aucs),
+        "recalls_per_fold":recalls
     }
 
     return metrics, np.array(all_preds)
@@ -320,6 +321,7 @@ def mlp_cross_validation(X, y,
         "recall_std": np.std(recalls),
         "auc_mean": np.mean(aucs),
         "auc_std": np.std(aucs),
+        "recalls_per_fold":recalls
     }
 
     return metrics, np.array(all_preds)
@@ -443,7 +445,8 @@ def hybrid_nn_svm_cv(X, y,
         "recall_mean": np.mean(recalls),
         "recall_std": np.std(recalls),
         "auc_mean": np.mean(aucs),
-        "auc_std": np.std(aucs)
+        "auc_std": np.std(aucs),
+        "recalls_per_fold":recalls
     }
 
     return metrics_dict, np.array(preds_all)
